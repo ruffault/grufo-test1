@@ -1,0 +1,173 @@
+<div id="catalogue">
+{if $smarty.get.idcat ne 0}
+<h2>
+    <span class="deco">></span>
+    <span id='current'>
+      <a href="{$urlsite}dictionnaire-et-lexique-c0">Catálogo</a>
+      {section name=uppercat loop=$uppercat}
+        &#062; <a href="{$urlsite}{$uppercat[uppercat].id|categ_link:$uppercat[uppercat].nom}">{$uppercat[uppercat].nom|utf8_encode}</a>
+      {/section}
+    </span>
+</h2>
+  {if $categorie_precise}
+  <div id="categ">
+    <table>
+    <tr>
+    {section name=categorie_precise loop=$categorie_precise}
+      {if $categorie_total > 30}
+        {cycle name="plop2" values="<td><ul>,,,,,,,,,,,,,,,,,"}
+      {elseif $categorie_total > 20}
+        {cycle name="plop2" values="<td><ul>,,,,,,,,,,,,,"}
+      {elseif $categorie_total > 10}
+        {cycle name="plop2" values="<td><ul>,,,,,"}
+      {elseif $categorie_total > 6}
+        {cycle name="plop2" values="<td><ul>,,"}
+      {else}
+        {cycle name="plop2" values="<td><ul>,,,"}
+      {/if}
+      
+      	<li><a href="{$urlsite}{$categorie_precise[categorie_precise].id|categ_link:$categorie_precise[categorie_precise].nom}">{$categorie_precise[categorie_precise].nom|utf8_encode}</a></li>
+      {if $categorie_total > 30}
+        {cycle name="plop" values=",,,,,,,,,,,,,,,,,</ul></td>"}
+      {elseif $categorie_total > 20}
+        {cycle name="plop" values=",,,,,,,,,,,,,</ul></td>"}
+      {elseif $categorie_total > 10}
+        {cycle name="plop" values=",,,,,</ul></td>"}
+      {elseif $categorie_total > 6}
+        {cycle name="plop" values=",,</ul></td>"}
+      {else}
+        {cycle name="plop" values=",,,</ul></td>"}
+      {/if}
+
+    {/section}
+    </tr>
+    </table>
+  </div>
+  {/if}
+{else}
+  {if !$notitle}
+    <h2><span class="deco">></span>Catálogo</h2>
+  {/if}
+  <table id="tabcatalogue">
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}abreviations-c1">Abreviaturas</a></h3>
+    <a href="{$urlsite}sigles-c256">Siglas</a>
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}langues-d-asie-et-proche-orient-oceanie-c303">Lenguas asiáticas y del Próximo Oriente - Oceanía</a></h3>
+    <a href="{$urlsite}arameen-c23">Arameo</a>, <a href="{$urlsite}chinois-c65">Chino</a>, <a href="{$urlsite}laotien-c167">Laosiano</a>...
+		<a href="{$urlsite}langues-d-asie-et-proche-orient-oceanie-c303">(Ver más)
+		</a>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}administration-et-gestion-de-l-entreprise-c308">Administración y gestión de empresas</a></h3>
+    <a href="{$urlsite}communautes-europeennes-c70">Comunidades europeas</a>, <a href="{$urlsite}economie-c103">Economía</a>, <a href="{$urlsite}management-c181">Dirección</a>...
+		<a href="{$urlsite}administration-et-gestion-de-l-entreprise-c308">(Ver más)
+		</a>  
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}langues-europeennes-europe-de-l-est-c300">Lenguas europeas + Europa del Este</a></h3>
+    <a href="{$urlsite}croate-c87">Croata</a>, <a href="{$urlsite}grec-c137">Griego</a>, <a href="{$urlsite}irlandais-c153">Irlandés</a>...
+		<a href="{$urlsite}langues-europeennes-europe-de-l-est-c300">(Ver más)</a>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}batiment-travaux-publics-c305">Construcción - Obras públicas</a></h3>
+    <a href="{$urlsite}architecture-c24">Arquitectura</a>, <a href="{$urlsite}domotique-c98">Domótica</a>, <a href="{$urlsite}mecanique-des-sols-c191">Mecánica de los suelos</a>...
+		<a href="{$urlsite}batiment-travaux-publics-c305">(Ver más)</a>
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}langues-indiennes-c301">Lenguas de la India</a></h3>
+    <a href="{$urlsite}hindi-c140">Hindi</a>, <a href="{$urlsite}nepali-c203">Nepalí</a>, <a href="{$urlsite}tibetain-c279">Tibetano</a>...
+		<a href="{$urlsite}langues-indiennes-c301">(Ver más)</a>  
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}dictionnaires-electroniques-c312">Diccionarios electrónicos</a></h3>
+    <a href="{$urlsite}cd-rom-c59">CD-ROM</a>, <a href="{$urlsite}logiciel-c174">Software</a>...
+		<a href="{$urlsite}dictionnaires-electroniques-c312">(Ver más)</a>  
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}langues-regionales-de-france-c299">Lenguas regionales de Francia</a></h3>
+    <a href="{$urlsite}alsacien-c12">Alsaciano</a>, <a href="{$urlsite}occitan-c208">Occitano</a>, <a href="{$urlsite}savoyard-c250">Saboyardo</a>...
+		<a href="{$urlsite}langues-regionales-de-france-c299">(Ver más)</a>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}dictionnaires-techniques-generaux-c304">Diccionarios técnicos generales</a></h3>
+    <a href="{$urlsite}anglais-technique-c19">Inglés técnico</a>, <a href="{$urlsite}espagnol-technique-c116">Español técnico</a>, <a href="{$urlsite}francais-technique-c125">Francés técnico</a>...
+		<a href="{$urlsite}dictionnaires-techniques-generaux-c304">(Ver más)</a>
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}sciences-de-la-terre-c309">Ciencias de la tierra</a></h3>
+    <a href="{$urlsite}botanique-c50">Botánica</a>, <a href="{$urlsite}geographie-c133">Geografía</a>, <a href="{$urlsite}geologie-c134">Geología</a>...
+		<a href="{$urlsite}sciences-de-la-terre-c309">(Ver más)</a>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}industries-chimiques-c306">Industrias químicas</a></h3>
+    <a href="{$urlsite}cosmetiques-c78">Cosmétiques</a>, <a href="{$urlsite}imprimerie-c149">Imprenta</a>, <a href="{$urlsite}textile-c277">Textil</a>...
+		<a href="{$urlsite}industries-chimiques-c306">(Ver más)</a>  
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}sciences-de-la-vie-c310">Ciencias de la vida</a></h3>
+    <a href="{$urlsite}agro-alimentaire-c7">Agroalimentaria</a>, <a href="{$urlsite}genetique-c131">Genética</a>, <a href="{$urlsite}zoologie-c297">Zoología</a>...
+		<a href="{$urlsite}sciences-de-la-vie-c310">(Ver más)</a>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}industries-diverses-c307">Industrias diversas</a></h3>
+    <a href="{$urlsite}arts-spectacles-c28">Artes</a>, <a href="{$urlsite}sports-c262">Deportes</a>, <a href="{$urlsite}tourisme-c283">Turismo</a>...
+		<a href="{$urlsite}industries-diverses-c307">(Ver más)</a>
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}sciences-physiques-c311">Ciencias físicas</a></h3>
+    <a href="{$urlsite}chimie-c64">Química</a>, <a href="{$urlsite}electronique-c108">Electrónica</a>, <a href="{$urlsite}optique-c209">Óptica</a>...
+		<a href="{$urlsite}sciences-physiques-c311">(Ver más)</a> 
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}langue-francaise-c166">Lengua francesa</a></h3>
+    <a href="{$urlsite}analogie-francais-c16">Analogía</a>, <a href="{$urlsite}etymologie-francais-c119">Etimología</a>, <a href="{$urlsite}linguistique-francais-c170">Linguística</a>...
+		<a href="{$urlsite}langue-francaise-c166">(Ver más)</a> 
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}terminologie-c275">Terminología</a></h3>
+    <a href="{$urlsite}divers-c95">Diverso</a>...
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}langues-africaines-c302">Lenguas africanas</a></h3>
+    <a href="{$urlsite}afrikaans-c5">Afrikaans</a>, <a href="{$urlsite}swahili-c266">Swahili</a>, <a href="{$urlsite}wolof-c294">Wolof</a>...
+		<a href="{$urlsite}langues-africaines-c302">(Ver más)</a>
+  </td>
+  <td>
+    <h3><img src="{$urlsite}css/puce2.gif" alt="" /> <a href="{$urlsite}transports-c285">Transportes</a></h3>
+    <a href="{$urlsite}aeronautique-c4">Aeronáutica</a>, <a href="{$urlsite}automobile-c31">Automóvil</a>, <a href="{$urlsite}marine-c184">Marino</a>...
+		<a href="{$urlsite}transports-c285">(Ver más)</a>
+  </td>
+  </tr>
+  </table>
+  
+{*
+  {section name=categorie loop=$categorie}
+  	 <h3><a href="{$urlsite}catalogue-{$categorie[categorie].id}-a.html">{$categorie[categorie].nom|utf8_encode}</a></h3>
+      {section name=subcateg loop=$subcateg}
+        {if $subcateg[subcateg].parent == $categorie[categorie].id}
+    	   <h4><a href="{$urlsite}catalogue-{$subcateg[subcateg].id}-a.html">{$subcateg[subcateg].nom|utf8_encode}</a></h4>
+        {/if}
+      {/section}
+  {/section}
+*}
+{/if}
+</div>

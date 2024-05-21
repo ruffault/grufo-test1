@@ -1,0 +1,361 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * This file is part of DotClear.
+ * Copyright (c) 2004 Maurice Svay and contributors. All rights
+ * reserved.
+ *
+ * DotClear is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * DotClear is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with DotClear; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * ***** END LICENSE BLOCK *****
+ *
+ * Author:
+ *  Maurice Svay  http://www.svay.com/web/dotclear/
+ */
+ 
+/* A propos de ce theme
+ * Tests effectues:
+ * - IE de 5.01 a 6 Windows
+ * - Firefox 0.9x Windows
+ * - Opera 7.51 Windows
+ * - Safari 1.2.2 MacOS X (10.3)
+ * - Konqueror Linux
+ * - Opera Linux
+ *
+ * Le layout est dans une feuille de style separee
+ * 1 - Global style
+ * 2 - Header
+ * 3 - Post
+ * 4 - Trackbacks et commentaires
+ * 5 - Sidebar
+ * 6 - Footer
+ */
+ 
+@import "layout.css";
+
+/* Global style
+********************************************/
+html, body{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background: #EEE url(img/background.png) repeat-x;
+	color: #000;
+	font-family: Tahoma, Arial, Helvetica, "Bitstream Vera Sans", sans-serif;
+	font-size: 0.8em;
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: "Trebuchet MS", sans-serif;
+}
+
+h2{font-size: 1.2em; margin: 1em 0;}
+h3{font-size: 1em; margin: 0.8em 0;}
+h4{font-size: 1em; font-weight: normal}
+
+a:link{color:#000; background:transparent;}
+a:visited{color:#844; background:transparent;}
+a:hover{color:#000; background:transparent;}
+a[hreflang]:after {content: "\0000a0[" attr(hreflang) "]"; color:#999; background:transparent;}
+a img{border: none;}
+
+abbr, acronym{
+	border: none;
+	background: transparent url(img/dotted.png) repeat-x bottom;
+	cursor : help;
+}
+
+code, pre, kbd {
+	font-family:"Courier New", Courier, monospace; font-size : 1em;
+}
+
+pre {
+overflow: scroll;
+width: 100%;
+}
+html>body pre {
+overflow: auto;
+width: auto;
+}
+
+fieldset{
+	border: none;
+}
+
+.field label{
+	display: block;
+	cursor: pointer;
+	cursor: hand; /* pour IE */
+}
+
+input, textarea{
+	border: 1px solid #999;
+	background: #FCFCFC;
+	/* -moz-border-radius connu pour ne pas etre valide */
+	-moz-border-radius: 4px;
+}
+
+textarea{
+	width: 99%;
+}
+
+.left{
+	float: left;
+	margin: 0 1em 1em 1em;
+}
+
+.right{
+	float: right;
+	margin: 0 1em 1em 1em;
+}
+
+/* Header
+********************************************/
+#top{
+	background: #B62200 url(img/header.jpg) no-repeat;
+}
+
+#top h1{
+	line-height: 15px;
+	margin: 0;
+	font-size: 1em;
+	text-align:center;
+}
+
+#top h1 a{
+	text-decoration: none;
+	color: #C30;
+	background: transparent;
+}
+
+#prelude{
+	color: #CD5C5C;
+	background: transparent;
+	text-align: center;
+	margin: 0;
+}
+
+#prelude a{
+	color: #CD5C5C;
+	background: transparent;
+	text-decoration:none;
+}
+
+#prelude a:hover{
+	color: #F0E68C;
+	background: transparent;
+}
+
+/* Post
+********************************************/
+#content{
+	color: #222;
+	background: transparent;
+}
+
+.post{
+	margin-top: 20px;
+}
+
+.day-date{
+	display: none;
+}
+
+.post-title{
+	padding-left: 20px;
+	background: #FFF url(img/sstar.png) no-repeat left;
+	background-position: 0 0.1em;
+	color: #000;
+	margin-bottom: 0;
+}
+
+.post-title a{
+	color: #000;
+	background: transparent;
+	text-decoration: none;
+}
+
+.post-info{
+	padding-left: 20px;
+	margin-top: 0;
+	color: #666;
+	background: transparent;
+}
+
+.post-info a{
+	color: #666;
+	background: transparent;
+}
+
+.post-content p{
+	width: 480px;
+	text-align: justify;
+	overflow: auto;
+}
+
+.post-content ul{
+	list-style-image: url(img/puce.png);
+}
+
+.post blockquote{
+	font-style : italic;
+	border-left : 5px solid #999;
+	padding-left : 1em;
+}
+
+.post blockquote p{
+	width: auto;
+}
+
+.post-info-co{
+	clear: both;
+	text-align: right;
+	font-size: 0.8em;
+	border: 1px solid #E0E0E0;
+	background: #FFF url(img/postinfo.png) repeat-x;
+	color: inherit;
+
+	margin-top: 0.5em;
+	margin-bottom: 3em;
+	padding: 0.5ex;
+	/* -moz-border-radius connu pour ne pas etre valide */
+	-moz-border-radius: 5px;
+}
+
+.post-info-co a{
+	color: #222;
+	background: transparent;
+	text-decoration: none;
+}
+
+.post-info-co a:before{
+	content: url(img/bulle.png);
+	margin-right: 1ex;
+}
+
+/* Trackbacks et commentaires
+********************************************/
+
+#trackbacks, #comments{
+	margin-top: 4em;
+}
+
+#trackbacks blockquote, #comments blockquote{
+	background: #F5F5F5;
+	color: inherit;
+	border: 1px dotted #AAA;
+	margin: 0.5ex 0 1em 0;
+	padding: 1ex;
+	overflow: auto;
+}
+
+#trackbacks blockquote p, #comments blockquote p{
+	margin: 1ex 0;
+}
+
+.comment-info{
+	margin-bottom: 0;
+}
+
+/* Sidebar
+********************************************/
+#sidebar{
+	background: #FFF url(img/menu.png) repeat-x;
+	color: #666;
+}
+
+#sidebar div{
+	/* aurait du etre #sidebar > div */
+	margin: 0 10px 2em 10px;
+}
+
+#sidebar h2{
+	margin: 0 0 1ex 0;
+}
+
+#sidebar ul{
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar a{
+	text-decoration: none;
+}
+
+#sidebar li a{
+	display: block;
+	color: #666;
+	background: transparent;
+}
+
+#sidebar li a:hover{
+	color: #333;
+	background: transparent url(img/curseur.gif) repeat-y right; /* Bling Bling No Flash */
+}
+
+#sidebar ul li:first-child{
+	/* :fisrt-child selector ne fonctionne pas dans IE */
+	border-top: 1px solid #CCC;
+	padding: 0.5ex 0;
+}
+
+#sidebar ul li{
+	border-bottom: 1px solid #CCC;
+	padding: 0.5ex 0;
+}
+
+#search p{
+	text-align: center;
+	margin: 0;
+}
+
+#search input{
+	width: 15%;
+}
+
+#search input#q{
+	width: 70%;
+}
+
+#calendar table{
+	color: #666;
+	background: transparent;
+	margin: 0 auto;
+	/* Desole pour la taille de fonte en pixel, mais IE craint trop */
+	font-size: 10px;
+	text-align: center;
+}
+
+#calendar table td a{
+	color: #444;
+	font-weight: bold;
+}
+
+/* Footer
+********************************************/
+#footer{
+	clear: both;
+	margin: 0;
+	padding: 2em 0 1em 0;
+	background: #FFF url(img/footer.png) no-repeat center bottom;
+	text-align: center;
+}
+
+#footer a{
+	text-decoration: none;
+	color: #999;
+	background: transparent;
+}

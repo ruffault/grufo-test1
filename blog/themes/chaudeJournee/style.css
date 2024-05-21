@@ -1,0 +1,386 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * This file is part of DotClear.
+ * Copyright (c) 2004 Samuel Latchman and contributors. All rights
+ * reserved.
+ *
+ * DotClear is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * DotClear is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with DotClear; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * ***** END LICENSE BLOCK *****
+ *
+ * Contributor(s):
+ *  Olivier Meunier
+ *  Maurice Svay
+ */
+
+body {
+	margin : 0;
+	padding : 0;
+	background : #EEE url(images/bg.png) repeat-y 42em 0;
+	font-family: Verdana, Geneva, "Bitstream Vera Sans", sans-serif;
+	font-size: 80%;
+	color : #000;
+}
+
+html>body{
+	background-position: 65em 0;
+}
+
+p {
+	margin : 1em 0;
+	line-height: 1.5em;
+}
+
+form { display : block; margin : 0; padding : 0; }
+code,pre { font-family : "Courier New",monospace; font-size : 1em; width: 100%; overflow: auto;}
+q { font-style : italic; }
+a { color : #246; }
+a:visited{
+	color: #666;
+}
+a:hover, a:focus, a:active { color: #333; }
+a[hreflang]:after {
+	content: "\0000a0(" attr(hreflang) ")";
+	color : #666;
+	background : transparent;
+}
+
+img, a img{
+	border : none; 
+	max-width: 100%; 
+	text-decoration: none;
+}
+
+ul{
+	list-style: square;
+	list-style-image: url(images/09.png);
+}
+
+.left{ float: left; margin-right: 1ex;}
+.right{ float: right; margin-left: 1ex;}
+
+h1, h2, h3, h4, h5, h6{
+	font-weight: normal;
+}
+
+h2{
+	font-size: 1.3em;
+	color: #444;
+	background: transparent;
+}
+
+h3{font-size: 1.2em;}
+h4{font-size: 1.1.em;}
+
+/* Page
+************************************************************/
+#page {
+	width: 65em;
+	margin : 0;
+	padding : 0;
+	background: #FFF;
+	background-image: url(images/menubg.png);
+	background-repeat: repeat-y;
+	background-position: 46em 0;
+}
+
+/* Header
+************************************************************/
+#top {
+	margin : 0;
+	height: 6em;
+	background: #BFD4E8 url(images/header.jpg) repeat-x;
+	color: inherit;
+	margin-bottom: 1em;
+	position: relative;
+}
+
+#top h1 {
+	margin: 0;
+	font-family: "Trebuchet MS", sans-serif;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 1.5em;
+	position: absolute;
+	bottom: 1ex;
+	left: 1ex;
+}
+
+#top a {
+	text-decoration : none;
+	color: #FFF;
+	background: transparent;
+}
+
+/* Prelude
+************************************************************/
+#prelude {
+	position: absolute;
+	margin : 0;
+	top: 5px;
+	left: 1ex;
+	color: #BFD4E8;
+	background: transparent;
+}
+
+#prelude a {
+	color : #BFD4E8;
+	background: transparent;
+}
+
+#prelude a:hover {
+	color : #FFF;
+	background: transparent;
+}
+
+/* 
+************************************************************/
+#main {
+	float : left;
+	width : 45em;
+	margin-right : 0px;
+}
+
+#content {
+	margin: 0 0 0 10ex;
+}
+
+/* Billet
+************************************************************/
+.post {
+	margin: 0 0 2.5em 0;
+	border-left: 1px solid #DDD;
+	padding-left: 2ex;
+	position: relative;
+}
+
+.day-date {
+	margin: 0;
+	color: #F90;
+	background: transparent;
+	text-align: right;
+	width: 10ex;
+	position: absolute;
+	left: -13ex;
+	font-size: 90%;
+}
+
+html>body .day-date{
+	left: -11ex;
+}
+
+.post h2{
+	margin-bottom: 0;
+}
+
+.post h2 a{
+	color: #444;
+	background: transparent;
+	text-decoration: none;
+}
+
+.post-info {
+	font-size : 0.85em;
+	color : #666;
+	margin : 0;
+}
+
+.post-chapo {
+	margin-bottom : 2em;
+}
+
+.post-content {
+	text-align: justify;
+}
+
+.post-info-co {
+	font-size : 0.85em;
+	clear : both;
+	color : #666;
+	background: transparent url(images/bulle.png) no-repeat left center;
+	padding-left: 13px;
+}
+
+#trackbacks{
+	margin-left: 2ex;
+	margin-top: 2em;
+}
+
+#comments{
+	margin-left: 2ex;
+	margin-bottom: 1em;
+	margin-top: 2em;
+}
+
+.comment-info{
+	padding-left: 13px;
+	background: transparent url(images/bulle.png) no-repeat left center;
+}
+
+#comments blockquote{
+	margin-left: 1ex;
+	margin-bottom: 2em;
+	padding-left: 1ex;
+	border-left: 1px solid #DDD;
+}
+
+fieldset{
+	border: none;
+}
+
+.field label{
+	display: block;
+}
+
+.field textarea{
+	width: 100%;
+	height: 20em;
+	border: 1px solid #999;
+}
+
+input[type=text]{
+	border: 1px solid #999;
+}
+
+/* Sidebar
+************************************************************/
+#sidebar {
+	margin-left : 47em;
+	margin-right: 1em;
+}
+
+#sidebar h2{
+	font-size: 1.1em;
+	background: transparent url(images/menu.png);
+	color: inherit;
+	padding: 3px;
+}
+
+#sidebar ul{
+	list-style: none;
+	list-style-image: none;
+	margin: 0;
+	padding: 0;
+}
+
+#sidebar ul li{
+	margin: 1ex 0;
+}
+
+#sidebar ul li a{
+	text-decoration: none;
+}
+
+/* Recherche */
+#q{
+	background: #FFF url(images/search.png) no-repeat;
+	background-position: 3px center;
+	padding-left: 16px;
+	width: 10em;
+}
+
+/* Calendrier */
+#calendar {
+	text-align: center;
+}
+
+#calendar h2 {
+	display : none;
+}
+
+#calendar a{
+	text-decoration: none;
+}
+
+#calendar table {
+	font-size : 0.8em;
+	margin : 0 auto;
+	width: 14em;
+}
+
+#calendar caption {
+	padding : 0 0 0.3em 0;
+	font-size : 1.2em;
+	margin : 0 auto;
+}
+
+#calendar abbr {
+	border : none;
+}
+
+#calendar th{
+	color: #9ED200;
+	font-style: normal;
+}
+
+#calendar td {
+	color: #999;
+	background: #EEE;
+	text-align: center;
+}
+
+#calendar td a{
+	font-weight : bold;
+	display: block;
+	color: #666;
+	background: #FFF url(images/dayevent.png) no-repeat right top;
+}
+
+#calendar td a:visited{
+	color: #888;
+	background: #FFF url(images/dayeventv.png) no-repeat right top;
+}
+
+#calendar td.active a{
+	color: #F60;
+	background: #FFF url(images/dayevent.png) no-repeat right top;
+}
+
+/* A retenir */
+#selection{
+	margin-bottom: 3em;
+}
+
+#selection h2{
+	font-weight: bold;
+	color: #F90;
+}
+
+/* Footer
+************************************************************/
+#footer {
+	margin: 0;
+	padding: 1ex 1em;
+	clear: left;
+	background: #EFEFEF;
+}
+
+#footer a{
+	color: #A0A0A0;
+	text-decoration: none;
+}
+
+/*
+************************************************************/
+.error {
+	border : 1px solid #c00;
+	background : #fee;
+	padding : 0.5em;
+}
+.error ul {
+	padding-left : 20px;
+}
+.error li {
+	list-style : square;
+}

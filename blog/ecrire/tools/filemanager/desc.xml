@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<plugin name="filemanager" version="0.5" active="1">
+  <author>Olivier Meunier</author>
+  
+  <label>Files manager</label>
+  <desc>Manage and edit files.</desc>
+</plugin>

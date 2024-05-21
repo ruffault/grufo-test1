@@ -1,0 +1,98 @@
+<?php
+/************************************************************************
+ * Programme écrit par GR le 4 novembre 2020				*
+ * pour									*
+ * 	- gérér les tables qui stockent le moteur de calcul 		*
+ * 	des frais de port						*
+ * 	- gérer les différents mode de calcul				*
+ * 									*
+ * 									*
+ ************************************************************************/
+header('content-type: text/html; charset=UTF-8');
+// on va commencer par charger les tables pour la France
+// donc selectionner les enregistrements de frais_port_new qui vérifient pays="fr"
+//on affiche le pays par son libellé long / on doit avoir une fonction pour ça oui c'est abrev_to_country_name($abrev, $applicationlang)
+       $sql= "select abrev, nom_fr  from pays order by nom_fr;";
+       $res = mysqli_query($link,$sql);
+?>
+<!--                       pavé entête de la page maitresse                                        --!>
+<h2> GESTION DES FRAIX DE PORT </h2>
+<h3> Principe pour un pays créer/modifier/supprimer des régles: <br>limite de poids/Prix en fonction d'un mode de transport et d'un tarif applicable </h3>
+
+<!--                       fin du pavé entête de la page maitresse                                        --!>
+
+<!--                       pavé formulaire pays                                        --!>
+<form  id= "pays" method="post" action="index2.php?page=new_frais_port"> <!--debut du formulaire pour choisir le pays --!> 
+	<p>
+
+		<label for= "Pays">Renseignez le pays pour lequel vous voulez gérer les frais de port </label><br />
+		<select name="pays" id = "pays" required>
+<?php	while ($donnees=mysqli_fetch_array($res))//on propose à l'affichage tous les pays pour sélection
+	{	
+	?>
+			<option value ="<?php echo $donnees['abrev'];?>" <?php  echo (($donnees['abrev'] == ((isset($_POST['pays']) ? $_POST['pays'] : 'FR')) ? "SELECTED" : "")); ?> >
+			<?php echo $donnees['abrev'] . "-" . $donnees['nom_fr'] ;?>
+			</option>
+	<?php } ?>
+
+		</select>
+	</p>
+	<input type="submit" value="Confirmer choix pays"> 
+</form> <!--fin du formulaire pour le pays --!>
+<?php
+//il faut maintenant récupérer le choix pour éventuellement l'afficher avant de passer à la suite
+		//on va afficher les tarifs pour un mode donné et le pays courant
+		//on initialise - en dur - les modes de calcul
+		$mode_calcul = array(array("nom" =>"standard","texte"=>"c'est le cas standard"),array("nom" =>"promo éditeur","texte" => "les tarifs applicables pour les paniers contenant des livres maisons"));
+// on boucle sur chaque mode de calacul
+		foreach ($mode_calcul as $mod_calc => $lib_mod_calc)
+		{
+?>
+	<h3> Pour la règle de calcul: <?php echo $lib_mod_calc["nom"]; ?><br> <?php echo $lib_mod_calc["texte"];?></h3>
+<?php 
+$sql = "SELECT * from frais_port_new WHERE pays = '" .((isset($_POST['pays']) ? $_POST['pays'] : 'FR'))."' AND mode_calcul=" . $mod_calc . " ORDER BY pays,mode_calcul,mode,poids_tarif;";
+//var_dump($sql);
+$res = mysqli_query($link,$sql);
+// on va afficher pour chacun des mode_calcul l'ensemble des couples poids_tarif/prix stockés dans la base pour le pays,mode_calcul
+//on initialise les variables $mode_cacul et $mode
+//$premier_mode_calcul= true;
+		$prec_mode = "";
+while ($regle = mysqli_fetch_array($res)) {
+	//on imprime l'entête du mode de calcul
+	//c'est le premier enregistrement ou le mode de calcul a changé
+//	if (($premier_mode_calcul) || ($regle['mode_calcul'] != $prec_mode_calcul)) 
+//	{
+//		$premier_mode_calcul = false;
+	?>
+		
+	<!--	<div id='FP_mode_calcul'> --!>
+<!--		Nous sommes dans le cas du mode de calcul: ce qui veut dire bla bla bla... </div> -->
+	<?php
+	// on imprime le premier enregistrement du mode de frais de port si c'est le premier ou s'il a changé. On l'aura initialiésé à null	
+		if ($regle['mode'] != $prec_mode)
+			echo "<p id='FP_mode'>" . $regle['mode'] . "</p>";
+
+	?>
+		<!--on écrit maintenant pour chaque poids son prix plus les icones de modification--!>
+<!--	<p id= 'FP_tarif'>  --!>
+		<span id='FP_poids'> >  <?php echo $regle['poids_tarif'];?> </span>
+		<span id='FP_prix'>Prix: <?php echo $regle['prix'] ; ?> </span>
+		<a href ='index2.php?page=new_frais_port&sous_page=modif&id=<?php echo $regle['id_frais_port']; ?>'><img src="./css/picto_edit.gif" alt="Modifier ces valeurs" title="Modifier ces valeurs"></a>
+		<a href ='index2.php?page=new_frais_port&sous_page=modif&id=<?php echo $regle['id_frais_port']; ?>'><img src="./css/picto_poubelle.gif" alt="Supprimer ces valeurs" title="Supprimer ces valeurs"></a>
+<!--	</p> --!>
+	
+<!--	</div> --!>
+<?php
+//var_dump("prec_mode");		var_dump($prec_mode);
+//var_dump("mode courant dans record");		var_dump($regle['mode']);
+//		$prec_mode_calcul = $regle['mode_calcul'];
+	$prec_mode = $regle['mode'];
+
+	} //fin de la boucle sur l'enregistrement*/	
+} //fin de la boucle sur le mode de calcul*/	
+//on traite la modification
+if ((isset($_GET['sous_page']) ? $_GET['sous_page'] : '') == "modif") include ("include/modif_frais_port.inc.php") ;
+?>
+		
+
+

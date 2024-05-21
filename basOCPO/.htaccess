@@ -1,0 +1,4 @@
+AuthName "Acces à l'application de Gestion des Frais de port"
+AuthType Basic
+AuthUserFile "/var/www/dicotest.grufo.ovh/web/basOCPO/.htpasswd"
+Require valid-user

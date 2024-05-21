@@ -1,0 +1,4 @@
+#!/bin/sh
+alias php='/usr/local/bin/php'
+cd /home/dicoland/www/
+php cron_same.php

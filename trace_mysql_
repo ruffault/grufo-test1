@@ -1,0 +1,162 @@
+addtopanier.php:12:											WHERE produit.id_produit = '" . mysql_real_escape_string($_GET['id_produit']) . "'
+addtopanier.php:16:$sql_info_product_result = mysql_query($sql_info_product);
+addtopanier.php:17:$val_info_product = mysql_fetch_array($sql_info_product_result);
+addtopanier.php:30:														'" . mysql_real_escape_string($_SESSION["id_commande"]) . "',
+addtopanier.php:31:														'" . mysql_real_escape_string($_GET["id_produit"]) . "',
+addtopanier.php:40:  mysql_query($sql_addtopanier);
+catalogue_editeur_csv.php:94:	$res = mysql_query($sql);
+catalogue_editeur_csv.php:95:	while($val = mysql_fetch_array($res))
+catalogue_editeur_pdf_originale.php:96:	$res = mysql_query($sql);
+catalogue_editeur_pdf_originale.php:97:	while($val = mysql_fetch_array($res))
+catalogue_editeur_pdf.php:101:	$res = mysql_query($sql);
+catalogue_editeur_pdf.php:102:	while($val = mysql_fetch_array($res))
+chglang.php:21:		$res = mysql_query($sql);
+cleanimg.php:9:$mysql_error_connect = "Connexion au serveur impossible.";
+cleanimg.php:10:$mysql_error_select = "Impossible de selectionner la base de données.";
+cleanimg.php:13:mysql_connect($host,$user,$pass)
+cleanimg.php:14:  or die($mysql_error_connect);
+cleanimg.php:16:mysql_select_db($bdd)
+cleanimg.php:17:  or die($mysql_error_select);
+cleanimg.php:22:mysql_query($clean) or die(mysql_error());
+cleanimg.php:25:$res = mysql_query($query) or die(mysql_error());
+cleanimg.php:27:while($val = mysql_fetch_array($res))
+cleanimg.php:38:    mysql_query($addimg) or die(mysql_error());
+csv.php:22:$res = mysql_query($sql)or die('echec requete ligne : '.__LINE__.'<br />avec la requete : '.$sql.'<br/>avec le message : '.mysql_error());
+csv.php:26:while ($val=mysql_fetch_array($res)){
+importtrad.php:8:@mysql_connect($host,$user,$pass) or die('Fail to connect database');
+importtrad.php:9:@mysql_select_db($bdd) or die('Fail to select database');
+importtrad.php:20:	$res = mysql_query($sql) or die(mysql_error());
+importtrad.php:30:	$res = mysql_query($sql) or die(mysql_error());
+importtrad.php:44:	$res = mysql_query($sql) or die(mysql_error());
+importtrad.php:46:	while($val = mysql_fetch_assoc($res))
+importtrad.php:82:$res = mysql_query($sql) or die(mysql_error());
+importtrad.php:83:while($val = mysql_fetch_assoc($res))
+loginalready.php:21:$sql_verifuser_result = mysql_query($sql_verifuser);
+loginalready.php:22:$sql_verifuser_result2 = mysql_query($sql_verifuser);
+loginalready.php:25:if (mysql_fetch_row($sql_verifuser_result))
+loginalready.php:29:  $val_id_user = mysql_fetch_array($sql_verifuser_result2);
+login.php:20:$sql_verifuser_result = mysql_query($sql_verifuser);
+login.php:21:$sql_verifuser_result2 = mysql_query($sql_verifuser);
+login.php:24:if (mysql_fetch_row($sql_verifuser_result))
+login.php:27:  $val_id_user = mysql_fetch_array($sql_verifuser_result2);
+logout.php:15:mysql_query($sql_expire);
+movepanier.php:14:mysql_query($sql_movepanier);
+movepanier.php:23:mysql_query($sql_movedecote);
+paiement_ok.older.php:258:				mysql_query($sql);
+paiement_ok.older.php:274:				mysql_query($sql_newcommande);
+paiement_ok.old.php:195:$sql_recup_result = mysql_query($sql_recup);
+paiement_ok.old.php:196:while($val_recup = mysql_fetch_array($sql_recup_result))
+paiement_ok.old.php:233:$sql_produit_result = mysql_query($sql_produit);
+paiement_ok.old.php:234:$sql_produit_result2 = mysql_query($sql_produit);
+paiement_ok.old.php:238:if (mysql_fetch_row($sql_produit_result))
+paiement_ok.old.php:240:  while($val_sql_produit = mysql_fetch_array($sql_produit_result2))
+paiement_ok.old.php:274:mysql_query($query);
+paiement_ok.old.php:288:mysql_query($sql_newcommande);
+paiement_ok.old.php:300:$sql_mail_result = mysql_query($sql_mail);
+paiement_ok.old.php:301:$val_mail = mysql_fetch_array($sql_mail_result);
+_paiement_ok.php:119:					mysql_query($sql);
+_paiement_ok.php:135:					mysql_query($sql_newcommande);
+_paiement_ok.php:227:					mysql_query($sql);
+_paiement_ok.php:243:					mysql_query($sql_newcommande);
+paiement_ok.php:119:					mysql_query($sql);
+paiement_ok.php:135:					mysql_query($sql_newcommande);
+paiement_ok.php:227:					mysql_query($sql);
+paiement_ok.php:243:					mysql_query($sql_newcommande);
+Recup_paiement_ok.php:258:				mysql_query($sql);
+Recup_paiement_ok.php:274:				mysql_query($sql_newcommande);
+Recup_validatecommande.php:18:$sql_recup_result = mysql_query($sql_recup);
+Recup_validatecommande.php:19:while($val_recup = mysql_fetch_array($sql_recup_result))
+Recup_validatecommande.php:55:$sql_produit_result = mysql_query($sql_produit);
+Recup_validatecommande.php:56:$sql_produit_result2 = mysql_query($sql_produit);
+Recup_validatecommande.php:58:if (mysql_fetch_row($sql_produit_result))
+Recup_validatecommande.php:60:  while($val_sql_produit = mysql_fetch_array($sql_produit_result2))
+Recup_validatecommande.php:97:mysql_query($sql_validatecommande);
+Recup_validatecommande.php:114:mysql_query($sql_newcommande);
+Recup_validatecommande.php:117:$id_commande = mysql_insert_id();
+remfrompanier.php:55:	$sql_future_result = mysql_query($sql_future);
+remfrompanier.php:57:	if (mysql_num_rows($sql_future_result))
+remfrompanier.php:60:		$val_future = mysql_fetch_array($sql_future_result);
+remfrompanier.php:75:		mysql_query($sql_addfuture);
+remfrompanier.php:78:		$id_future = mysql_insert_id();
+remfrompanier.php:84:	mysql_query($sql_move_panier);
+remfrompanier.php:119:  $sql_panier_future_result = mysql_query($sql_panier_future);
+remfrompanier.php:121:  while($val = mysql_fetch_array($sql_panier_future_result))
+remfrompanier.php:126:    mysql_query($sql_move_panier);
+remfrompanier.php:161:  $sql_panier_future_result = mysql_query($sql_panier_future);
+remfrompanier.php:163:  while($val = mysql_fetch_array($sql_panier_future_result))
+remfrompanier.php:167:    mysql_query($sql_move_panier);
+search.php:121:	$search_sql_result = mysql_query($search_sql);
+search.php:122:	$nbresult = mysql_num_rows($search_sql_result);
+search.php:236:  $search_sql_result = mysql_query($search_sql);
+search.php:237:  $nbresult = mysql_num_rows($search_sql_result);
+search.php:257:  $search_sql_result = mysql_query($search_sql);
+search.php:258:  $nbresult = mysql_num_rows($search_sql_result);
+sendpass.php:16:  $searchmail_result = mysql_query($searchmail);
+sendpass.php:17:  if(mysql_num_rows($searchmail_result))
+sendpass.php:19:    $val_login = mysql_fetch_array($searchmail_result);
+sendpass.php:27:    mysql_query($query);
+test_contenu.php:15:	$req_get_contenu = mysql_query($sql_get_contenu) or die('Erreur SQL !<br>'.$sql.'<br>'.mysql_error());
+test_contenu.php:17:	while($data_get_contenu = mysql_fetch_assoc($req_get_contenu))
+_validatecommande.php:18:$sql_recup_result = mysql_query($sql_recup);
+_validatecommande.php:19:while($val_recup = mysql_fetch_array($sql_recup_result))
+_validatecommande.php:55:$sql_produit_result = mysql_query($sql_produit);
+_validatecommande.php:56:$sql_produit_result2 = mysql_query($sql_produit);
+_validatecommande.php:58:if (mysql_fetch_row($sql_produit_result))
+_validatecommande.php:60:  while($val_sql_produit = mysql_fetch_array($sql_produit_result2))
+_validatecommande.php:97:mysql_query($sql_validatecommande);
+_validatecommande.php:114:mysql_query($sql_newcommande);
+_validatecommande.php:117:$id_commande = mysql_insert_id();
+validatecommande.php:18:$sql_recup_result = mysql_query($sql_recup);
+validatecommande.php:19:while($val_recup = mysql_fetch_array($sql_recup_result))
+validatecommande.php:55:$sql_produit_result = mysql_query($sql_produit);
+validatecommande.php:56:$sql_produit_result2 = mysql_query($sql_produit);
+validatecommande.php:58:if (mysql_fetch_row($sql_produit_result))
+validatecommande.php:60:  while($val_sql_produit = mysql_fetch_array($sql_produit_result2))
+validatecommande.php:97:mysql_query($sql_validatecommande);
+validatecommande.php:114:mysql_query($sql_newcommande);
+validatecommande.php:117:$id_commande = mysql_insert_id();
+valid_nabil_cmd_manu.php:64:				mysql_query($sql);
+valid_nabil_cmd_manu.php:80:				mysql_query($sql_newcommande);
+verifformfacturation.php:33:                     AND abrev = '" . mysql_real_escape_string($_POST["facturation_pays"]) . "'
+verifformfacturation.php:35:    $res_cp_oblig = mysql_query($sql_cp_oblig);
+verifformfacturation.php:36:    if (mysql_num_rows($res_cp_oblig))
+verifformfacturation.php:58:  $sql_recupmembre_result = mysql_query($sql_recupmembre);
+verifformfacturation.php:59:  $recupmembre = mysql_fetch_array($sql_recupmembre_result);
+verifformfacturation.php:82:                             '". mysql_real_escape_string($_POST["facturation_civilite"])."',
+verifformfacturation.php:83:                             '". mysql_real_escape_string($_POST["facturation_nom"])."',
+verifformfacturation.php:84:                             '". mysql_real_escape_string($_POST["facturation_prenom"])."',
+verifformfacturation.php:85:                             '". mysql_real_escape_string($_POST["facturation_adresse1"])."',
+verifformfacturation.php:86:                             '". mysql_real_escape_string($_POST["facturation_adresse2"])."',
+verifformfacturation.php:87:                             '". mysql_real_escape_string($_POST["facturation_adresse3"])."',
+verifformfacturation.php:88:                             '". mysql_real_escape_string($_POST["facturation_ville"])."',
+verifformfacturation.php:89:                             '". mysql_real_escape_string($_POST["facturation_etat"])."',
+verifformfacturation.php:90:                             '". mysql_real_escape_string($_POST["facturation_cp"])."',
+verifformfacturation.php:91:                             '". mysql_real_escape_string($_POST["facturation_pays"])."'
+verifformfacturation.php:93:  mysql_query($sql_facturation);
+verifformfacturation.php:96:  $_SESSION["id_facturation"] = mysql_insert_id();
+verifformfacturation.php:100:                    SET id_facturation = '".mysql_real_escape_string($_SESSION["id_facturation"])."'
+verifformfacturation.php:101:                    WHERE id_commande = '".mysql_real_escape_string($_SESSION["id_commande"])."'
+verifformfacturation.php:103:  mysql_query($sql_facturation);
+verifforminscription.php:20:		$res = mysql_query($sql);
+verifforminscription.php:21:		$val = mysql_fetch_assoc($res);
+verifforminscription.php:48:$sql_verifloginexist_result = mysql_query($sql_verifloginexist);
+verifforminscription.php:49:if (mysql_num_rows($sql_verifloginexist_result))
+verifforminscription.php:57:$sql_verifemailexist_result = mysql_query($sql_verifemailexist);
+verifforminscription.php:58:if (mysql_num_rows($sql_verifemailexist_result))
+verifforminscription.php:99:  $res_cp_oblig = mysql_query($sql_cp_oblig);
+verifforminscription.php:100:  if (mysql_num_rows($res_cp_oblig))
+verifforminscription.php:178:  mysql_query($sql_newmember);
+verifforminscription.php:186:  $sql_newiduser_result = mysql_query($sql_newiduser);
+verifforminscription.php:187:  $val = mysql_fetch_array($sql_newiduser_result);
+verifformlivraison.php:36:    $res_cp_oblig = mysql_query($sql_cp_oblig);
+verifformlivraison.php:37:    if (mysql_num_rows($res_cp_oblig))
+verifformlivraison.php:58:  $sql_recupmembre_result = mysql_query($sql_recupmembre);
+verifformlivraison.php:59:  $recupmembre = mysql_fetch_array($sql_recupmembre_result);
+verifformlivraison.php:93:  mysql_query($sql_livraison);
+verifformlivraison.php:96:  $_SESSION["id_livraison"] = mysql_insert_id();
+verifformlivraison.php:103:  mysql_query($sql_livraison);
+_veriffraisport.php:29:  $sql_idfraisport = mysql_query($sql_idfraisport);
+_veriffraisport.php:30:  $val_idfraisport = mysql_fetch_array($sql_idfraisport);
+veriffraisport.php:29:  $sql_idfraisport = mysql_query($sql_idfraisport);
+veriffraisport.php:30:  $val_idfraisport = mysql_fetch_array($sql_idfraisport);
+veriffraisport.php:38:  mysql_query($sql_saveidfraisport);

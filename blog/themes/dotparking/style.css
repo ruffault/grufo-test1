@@ -1,0 +1,288 @@
+/* ***** BEGIN LICENSE BLOCK *****
+ * This is DoTParking, a theme for DotClear.
+ * Copyright (c) 2004 Laurence Jacquet and contributors. All rights
+ * reserved.
+ *
+ * DotClear is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * DotClear is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with DotClear; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ *
+ * ***** END LICENSE BLOCK *****
+ */
+
+body {
+	border-left: 0px;
+	margin : 20px 0 0 0;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 0.7em;
+	color: #333;
+	background : #fff url(pics/fd-body.gif) no-repeat 800px 0px;
+}
+
+p { margin : 1em 0; }
+h3 { font-size : 1.2em; }
+
+a {
+	color: #000000;
+}
+
+form {
+	border: 0px;
+}
+fieldset {
+	border: 0px;
+}
+
+/* Layout
+-------------------------------------------------------- */
+#page {
+	width: 750px;
+	margin-left: 50px;
+	border: 1px solid #999;
+	background : #fff url(pics/logo.gif) no-repeat left top;
+	-moz-border-radius: 4px;
+}
+
+#top {
+	background : #E6E6E6 url(pics/fond.gif) repeat-x;
+	margin-bottom : 10px;
+}
+#top h1 {
+	margin : 0;
+	font-size: 24px;
+	height: 50px;
+	line-height: 50px;
+	color: #c00;
+	font-weight: bold;
+	background : transparent url(pics/hautlogo.gif) no-repeat;
+	height: 50px;
+	padding-left: 20px;
+}
+#top a {
+	color: #c00;
+	text-decoration: none;
+}
+
+#prelude {
+	display : none;
+}
+
+
+#main {
+	float : right;
+	width : 550px;
+	margin : 0 10px 0 0;
+}
+html>body #main {
+	width : 560px;
+}
+
+#sidebar {
+	margin-right : 580px;
+}
+
+#sidebar div {
+	border: 1px solid #999999;
+	padding : 5px 10px;
+	margin : 0 0 15px 10px;
+	-moz-border-radius: 4px;
+	
+}
+#sidebar h2 {
+	color: #CC0000;
+	line-height: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin : 0;
+	font-size : 1em;
+}
+#sidebar ul {
+	margin: 0px;
+	padding: 0px;
+	list-style-type: none;
+}
+#sidebar li {
+	display: block;
+	margin: 0px;
+	padding: 0px;
+}
+#sidebar li:before {
+	content : ".: ";
+}
+
+#sidebar a {
+	color: #000000;
+	text-decoration: none;
+	letter-spacing: 1px;
+}
+#search p {
+	margin: 0;
+}
+
+#sidebar input, #comment-form input, #comment-form textarea {
+	border: 1px solid #CCCCCC;
+	background-color: #E6E6E6;
+	color: #333333;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	font-size: 1em;
+	-moz-border-radius: 4px;
+}
+
+/* Calendar */
+#calendar {
+}
+
+#calendar table {
+	border-collapse : collapse;
+	font-size: 9px;
+}
+
+#calendar caption {
+        padding : 0 0 3px 0;
+	font-size : 11px;
+}
+
+#calendar abbr {
+        border : none;
+}
+
+#calendar th {
+	border: none;
+	padding: 1px;
+}
+
+#calendar td {
+        border : none;
+	padding : 1px;
+}
+
+#calendar td {
+        text-align : center;
+}
+
+#calendar td.active {
+        border : 1px solid #999999;
+}
+
+#calendar td.active a {
+        font-weight : bold;
+}
+
+#calendar a {
+        font-weight: bold;
+	text-decoration: underline;
+}
+
+#footer {
+	clear : both;
+	margin-top: 5px;
+	text-align: center;
+	font-size: 10px;
+}
+
+/* Post
+-------------------------------------------------------- */
+.day-date {
+	display : none;
+}
+.post {
+	margin : 0 0 15px 0;
+	padding : 0 5px 3px 5px;
+	background : transparent url(pics/bas.gif) repeat-x bottom;
+	border : 1px solid #999;
+	text-align : justify;
+	-moz-border-radius: 4px;
+}
+
+.post-title {
+	float : left;
+	margin : 0 0 1em -5px;
+	padding : 2px 10px;
+	border-bottom : 1px solid #999;
+	border-right : 1px solid #999;
+	text-align: center;
+	width: 140px;
+	font-weight: bold;
+	color: #CC0000;
+	-moz-border-radius: 4px;
+	font-size : 1em;
+}
+
+.post-title a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #CC0000;
+}
+
+.post-info {
+	margin : 2px 0 0 0;
+	text-align : right;
+}
+
+.post-content, .post-chapo {
+	clear : left;
+}
+
+.comment-info {
+	margin : 1em 0 0 0;
+}
+#trackbacks blockquote, #comments blockquote, #comment-preview blockquote {
+	margin-left: 5px;
+	color : #666;
+}
+#trackbacks blockquote p, #comments blockquote p {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+	padding-bottom: 5px;
+}
+
+.comment-number {
+	font-size : 1.4em;
+	font-weight : bold;
+}
+.comment-number a {
+	text-decoration : none;
+	color : #c00;
+}
+
+/* Error messages
+-------------------------------------------------------- */
+.error {
+	border : 1px solid #c00;
+	color : #c00;
+	padding : 0.5em;
+	-moz-border-radius : 4px;
+}
+.error ul {
+	padding-left : 20px;
+}
+
+/* Formulaire
+-------------------------------------------------------- */
+.field label {
+	display : block;
+	float : left;
+	width : 10.5em;
+}
+
+
+#block1 {
+	/*position : absolute;
+	top : 0;
+	left : 0;*/
+	width : 80px;
+	height : 15px;
+	background : transparent url(pics/dotparking.gif) no-repeat 0 0;
+	margin : -20px 0 0 718px;
+}

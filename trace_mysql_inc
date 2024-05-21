@@ -1,0 +1,240 @@
+inc/addcomment.inc.php:8:	$res = mysql_query($sql);
+inc/addcomment.inc.php:9:	$val = mysql_fetch_assoc($res);
+inc/addcomment.inc.php:28:	mysql_query($sql);
+inc/buysame.inc.php:13:	$res = mysql_query($sql);
+inc/buysame.inc.php:15:	while ($val = mysql_fetch_assoc($res))
+inc/catalogue-editeur.inc.php:31:$res = mysql_query($sql);
+inc/catalogue-editeur.inc.php:34:while($val = mysql_fetch_array($res))
+inc/catalogue-editeur-menu.inc.php:9:$res = mysql_query($sql);
+inc/catalogue-editeur-menu.inc.php:12:while($val = mysql_fetch_array($res))
+inc/catalogue.inc.php:6:$res = mysql_query($sql_allcateg);
+inc/catalogue.inc.php:8:while($val = mysql_fetch_array($res)) {
+inc/catalogue.inc.php:53:$res_editeurs = mysql_query($sql_editeurs);
+inc/catalogue.inc.php:56:while($val_editeurs = mysql_fetch_array($res_editeurs))
+inc/catalogue-menu.inc.php:7:$res = mysql_query($sql);
+inc/catalogue-menu.inc.php:10:while($val = mysql_fetch_array($res))
+inc/connexion.inc.php:4:$mysql_error_connect = $mysql_error_select = '<link rel="stylesheet" href="css/style.css" />'
+inc/connexion.inc.php:17:@mysql_connect($host,$user,$pass)
+inc/connexion.inc.php:18:  or die($mysql_error_connect);
+inc/connexion.inc.php:19:@mysql_select_db($bdd)
+inc/connexion.inc.php:20:  or die($mysql_error_select);
+inc/countvisite.inc.php:44:mysql_query($sql_addip);
+inc/createcookie.inc.php:86:    $session_result = mysql_query($session_query);
+inc/createcookie.inc.php:88:  while(mysql_num_rows($session_result) != 0);
+inc/createcookie.inc.php:108:  $session_result = mysql_query($session_query);
+inc/detailcommande.inc.php:10:$sql_selectcmd_result = mysql_query($sql_selectcmd);
+inc/detailcommande.inc.php:12:while ($val = mysql_fetch_array($sql_selectcmd_result))
+inc/detailcommande.inc.php:29:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/detailcommande.inc.php:33:  if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/detailcommande.inc.php:38:    while ($val = mysql_fetch_array($sql_showpanier_result))
+inc/formfacturation.inc.php:8:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/formfacturation.inc.php:10:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/formfacturation.inc.php:18:  $sql_infomembre_result = mysql_query($sql_infomembre);
+inc/formfacturation.inc.php:19:  $val_infomembre = mysql_fetch_array($sql_infomembre_result);
+inc/formfacturation.inc.php:50:  $sql_allcountry_result = mysql_query($sql_allcountry);
+inc/formfacturation.inc.php:52:  while($valcountry = mysql_fetch_array($sql_allcountry_result))
+inc/formfraisport.inc.php:8:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/formfraisport.inc.php:9:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/forminscription.inc.php:6:	$sql_indicatif_result = mysql_query($sql_indicatif);
+inc/forminscription.inc.php:7:  $total = mysql_num_rows($sql_indicatif_result);
+inc/forminscription.inc.php:17:  while($val_indicatif = mysql_fetch_array($sql_indicatif_result))
+inc/formlivraison.inc.php:8:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/formlivraison.inc.php:9:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/formlivraison.inc.php:16:  $sql_infomembre_result = mysql_query($sql_infomembre);
+inc/formlivraison.inc.php:17:  $val_infomembre = mysql_fetch_array($sql_infomembre_result);
+inc/formlivraison.inc.php:48:  $sql_allcountry_result = mysql_query($sql_allcountry);
+inc/formlivraison.inc.php:50:  while($valcountry = mysql_fetch_array($sql_allcountry_result))
+inc/formsearch.inc.php:5:$result = mysql_query($query);
+inc/formsearch.inc.php:8:while ($val = mysql_fetch_array($result))
+inc/function.inc.php:62:function date_mysql_to_timestamp($date){
+inc/function.inc.php:67:function date_mysql_to_timestamp2($date){
+inc/function.inc.php:292:    $code_result = mysql_query($code_query);
+inc/function.inc.php:293:  } while(mysql_num_rows($code_result) != 0);
+inc/function.inc.php:308:  $sql_poid_result = mysql_query($sql_poid);
+inc/function.inc.php:309:  while($val = mysql_fetch_array($sql_poid_result))
+inc/function.inc.php:337:  $res_pays = mysql_query($sql_pays);
+inc/function.inc.php:338:  $val_pays = mysql_fetch_array($res_pays);
+inc/function.inc.php:414:  $res = mysql_query($sql);
+inc/function.inc.php:419:  while ($val = mysql_fetch_array($res))
+inc/function.inc.php:451:  $res_pays = mysql_query($sql_pays);
+inc/function.inc.php:452:  $val_pays = mysql_fetch_array($res_pays);
+inc/function.inc.php:527:  $res = mysql_query($sql);
+inc/function.inc.php:532:  while ($val = mysql_fetch_array($res))
+inc/function.inc.php:610:  $res = mysql_query($sql);
+inc/function.inc.php:611:  $val = mysql_fetch_array($res);
+inc/function.inc.php:620:  $res = mysql_query($sql);
+inc/function.inc.php:621:  $val = mysql_fetch_array($res);
+inc/function.inc.php:640:	$res_src = mysql_query($query);
+inc/function.inc.php:641:	while($val_src = mysql_fetch_array($res_src))
+inc/function.inc.php:649:	$res_src = mysql_query($query);
+inc/function.inc.php:651:	while($val_src = mysql_fetch_array($res_src))
+inc/function.inc.php:722:	$res2 = mysql_query($sql);
+inc/function.inc.php:723:	$val = mysql_fetch_array($res2);
+inc/function.inc.php:745:	mysql_query($sql);
+inc/function.inc.php:763:	mysql_query($sql);
+inc/function.inc.php:778:	$res = mysql_query($sql);
+inc/function.inc.php:779:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:797:	$res = mysql_query($sql);
+inc/function.inc.php:798:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:810:	mysql_query($sql);
+inc/function.inc.php:825:		$res = mysql_query($sql);
+inc/function.inc.php:827:		while ($val = mysql_fetch_assoc($res))
+inc/function.inc.php:867:	$res = mysql_query($sql);
+inc/function.inc.php:870:	while ($val = mysql_fetch_assoc($res))
+inc/function.inc.php:909:	$res = mysql_query($sql);
+inc/function.inc.php:910:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:957:	$res = mysql_query($sql);
+inc/function.inc.php:958:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:1023:	$res = mysql_query($sql);
+inc/function.inc.php:1024:	$address = mysql_fetch_assoc($res);
+inc/function.inc.php:1040:  $res = mysql_query($sql);
+inc/function.inc.php:1041:  $name = mysql_fetch_array($res);
+inc/function.inc.php:1092:	$res = mysql_query($sql);
+inc/function.inc.php:1093:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:1168:	$res = mysql_query($sql);
+inc/function.inc.php:1169:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:1185:  mysql_query($sql);
+inc/function.inc.php:1194:	$res = mysql_query($sql);
+inc/function.inc.php:1195:	$val = mysql_fetch_assoc($res);
+inc/function.inc.php:1230:	$res = mysql_query($query);
+inc/function.inc.php:1232:	while($data = mysql_fetch_array($res))
+inc/function.inc.php:1250:	$res = mysql_query($query);
+inc/function.inc.php:1252:	while($data = mysql_fetch_array($res))
+inc/function.inc.php:1268:	$res = mysql_query($sql);
+inc/function.inc.php:1269:	$nbr = mysql_numrows($res);
+inc/function.inc.php:1285:	$res = mysql_query($sql);
+inc/function.inc.php:1286:	$nbr = mysql_numrows($res);
+inc/function.inc.php:1301:	$res = mysql_query($sql);
+inc/function.inc.php:1302:	$nbr = mysql_numrows($res);
+inc/function.modiffp.inc.php:62:function date_mysql_to_timestamp($date){
+inc/function.modiffp.inc.php:67:function date_mysql_to_timestamp2($date){
+inc/function.modiffp.inc.php:291:    $code_result = mysql_query($code_query);
+inc/function.modiffp.inc.php:292:  } while(mysql_num_rows($code_result) != 0);
+inc/function.modiffp.inc.php:307:  $sql_poid_result = mysql_query($sql_poid);
+inc/function.modiffp.inc.php:308:  while($val = mysql_fetch_array($sql_poid_result))
+inc/function.modiffp.inc.php:370:  $res_pays = mysql_query($sql_pays);
+inc/function.modiffp.inc.php:371:  $val_pays = mysql_fetch_array($res_pays);
+inc/function.modiffp.inc.php:447:  $res = mysql_query($sql);
+inc/function.modiffp.inc.php:452:  while ($val = mysql_fetch_array($res))
+inc/function.modiffp.inc.php:484:  $res_pays = mysql_query($sql_pays);
+inc/function.modiffp.inc.php:485:  $val_pays = mysql_fetch_array($res_pays);
+inc/function.modiffp.inc.php:560:  $res = mysql_query($sql);
+inc/function.modiffp.inc.php:565:  while ($val = mysql_fetch_array($res))
+inc/function.modiffp.inc.php:643:  $res = mysql_query($sql);
+inc/function.modiffp.inc.php:644:  $val = mysql_fetch_array($res);
+inc/function.modiffp.inc.php:653:  $res = mysql_query($sql);
+inc/function.modiffp.inc.php:654:  $val = mysql_fetch_array($res);
+inc/function.modiffp.inc.php:673:	$res_src = mysql_query($query);
+inc/function.modiffp.inc.php:674:	while($val_src = mysql_fetch_array($res_src))
+inc/function.modiffp.inc.php:682:	$res_src = mysql_query($query);
+inc/function.modiffp.inc.php:684:	while($val_src = mysql_fetch_array($res_src))
+inc/function.modiffp.inc.php:755:	$res2 = mysql_query($sql);
+inc/function.modiffp.inc.php:756:	$val = mysql_fetch_array($res2);
+inc/function.modiffp.inc.php:778:	mysql_query($sql);
+inc/function.modiffp.inc.php:796:	mysql_query($sql);
+inc/function.modiffp.inc.php:811:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:812:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:830:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:831:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:843:	mysql_query($sql);
+inc/function.modiffp.inc.php:858:		$res = mysql_query($sql);
+inc/function.modiffp.inc.php:860:		while ($val = mysql_fetch_assoc($res))
+inc/function.modiffp.inc.php:900:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:903:	while ($val = mysql_fetch_assoc($res))
+inc/function.modiffp.inc.php:942:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:943:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:990:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:991:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:1056:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1057:	$address = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:1073:  $res = mysql_query($sql);
+inc/function.modiffp.inc.php:1074:  $name = mysql_fetch_array($res);
+inc/function.modiffp.inc.php:1125:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1126:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:1201:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1202:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:1218:  mysql_query($sql);
+inc/function.modiffp.inc.php:1227:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1228:	$val = mysql_fetch_assoc($res);
+inc/function.modiffp.inc.php:1263:	$res = mysql_query($query);
+inc/function.modiffp.inc.php:1265:	while($data = mysql_fetch_array($res))
+inc/function.modiffp.inc.php:1283:	$res = mysql_query($query);
+inc/function.modiffp.inc.php:1285:	while($data = mysql_fetch_array($res))
+inc/function.modiffp.inc.php:1301:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1302:	$nbr = mysql_numrows($res);
+inc/function.modiffp.inc.php:1318:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1319:	$nbr = mysql_numrows($res);
+inc/function.modiffp.inc.php:1334:	$res = mysql_query($sql);
+inc/function.modiffp.inc.php:1335:	$nbr = mysql_numrows($res);
+inc/header.inc.php:53:		$res = mysql_query($sql);
+inc/livraisonprecise.inc.php:10:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/livraisonprecise.inc.php:12:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/livraisonprecise.inc.php:57:  $sql_allcountry_result = mysql_query($sql_allcountry);
+inc/livraisonprecise.inc.php:60:  while($valcountry = mysql_fetch_array($sql_allcountry_result))
+inc/modifpref.inc.php:55:	      mysql_query($modif_user);
+inc/modifpref.inc.php:72:      $result = mysql_query($query);
+inc/modifpref.inc.php:74:  		if(!mysql_num_rows($result))
+inc/modifpref.inc.php:97:      	mysql_query($modif_password);
+inc/modifpref.inc.php:108:      $user_info_result = mysql_query($user_info); 
+inc/modifpref.inc.php:109:      $val_user_info = mysql_fetch_array($user_info_result);
+inc/monthproduct.inc.php:9:$res = mysql_query($sql);
+inc/monthproduct.inc.php:10:$val = mysql_fetch_array($res);
+inc/occasion-menu.inc.php:8:$res = mysql_query($sql);
+inc/occasion-menu.inc.php:11:while($val = mysql_fetch_array($res))
+inc/occasion.php:8:$res = mysql_query($sql);
+inc/occasion.php:11:while($val = mysql_fetch_array($res))
+inc/oldcommande.inc.php:11:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/oldcommande.inc.php:13:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/oldcommande.inc.php:16:  while ($val = mysql_fetch_array($sql_showpanier_result))
+inc/oldcommande.inc.php:18:    $date = date_fr(date_mysql_to_timestamp($val["date_validation"]));
+inc/oldcommande.inc.php:19:    $date_envoie = date_fr(date_mysql_to_timestamp2($val["date_envoie"]));
+inc/paiementcheque.inc.php:13:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/paiementcheque.inc.php:14:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/paiementcheque.inc.php:22:    mysql_query($sql_validatecommande);
+inc/paiementcheque.inc.php:50:    $sql_produit_result = mysql_query($sql_produit);
+inc/paiementcheque.inc.php:51:    $sql_produit_result2 = mysql_query($sql_produit);
+inc/paiementcheque.inc.php:54:    if (mysql_fetch_row($sql_produit_result))
+inc/paiementcheque.inc.php:56:      while($val_sql_produit = mysql_fetch_array($sql_produit_result2))
+inc/paiementvirement.inc.php:13:$sql_showpanier_result = mysql_query($sql_showpanier);
+inc/paiementvirement.inc.php:14:if (mysql_num_rows($sql_showpanier_result) > 0)
+inc/paiementvirement.inc.php:22:    mysql_query($sql_validatecommande);
+inc/paiementvirement.inc.php:50:    $sql_produit_result = mysql_query($sql_produit);
+inc/paiementvirement.inc.php:51:    $sql_produit_result2 = mysql_query($sql_produit);
+inc/paiementvirement.inc.php:54:    if (mysql_fetch_row($sql_produit_result))
+inc/paiementvirement.inc.php:56:      while($val_sql_produit = mysql_fetch_array($sql_produit_result2))
+inc/readcomment.inc.php:14:	$res = mysql_query($sql);
+inc/readcomment.inc.php:16:	while ($val = mysql_fetch_assoc($res))
+inc/sameauteur.inc.php:16:$res = mysql_query($sql);
+inc/sameauteur.inc.php:19:while($val = mysql_fetch_array($res))
+inc/samecateg2.inc.php:17:$res = mysql_query($sql);
+inc/samecateg2.inc.php:20:while($val = mysql_fetch_array($res))
+inc/samecateg.inc.php:25:$res = mysql_query($sql);
+inc/samecateg.inc.php:28:while($val = mysql_fetch_array($res))
+inc/samecateg.inc.php:46:$res = mysql_query($sqlpage);
+inc/samecateg.inc.php:47:$valpage = mysql_fetch_array($res);
+inc/session.inc.php:14:$session_result = mysql_query($session_query);
+inc/session.inc.php:17:if (mysql_num_rows($session_result) < 1)
+inc/session.inc.php:35:$session_result = mysql_query($session_query);
+inc/session.inc.php:38:if (mysql_num_rows($session_result) < 1 && isset($_SESSION["sessionid"]))
+inc/session.inc.php:74:$sql_iduser_result = mysql_query($sql_iduser);
+inc/session.inc.php:75:$val_iduser = mysql_fetch_array($sql_iduser_result);
+inc/session.inc.php:106:$sql_selectlastcommande_result = mysql_query($sql_selectlastcommande);
+inc/session.inc.php:109:if (mysql_num_rows($sql_selectlastcommande_result) > 0)
+inc/session.inc.php:111:  $sql_selectlastcommande_result2 = mysql_query($sql_selectlastcommande);
+inc/session.inc.php:112:  $val_lastcommande = mysql_fetch_array($sql_selectlastcommande_result2);
+inc/session.inc.php:130:  mysql_query($sql_newcommande);
+inc/session.inc.php:158:  $sql_selectlastcommande_result = mysql_query($sql_selectlastcommande);
+inc/session.inc.php:159:  $val_lastcommande = mysql_fetch_array($sql_selectlastcommande_result);
+inc/session.inc.php:174:  $allabout_result = mysql_query($allabout);
+inc/session.inc.php:176:  $val_allabout = mysql_fetch_array($allabout_result);
+inc/showfuture.inc.php:37:$sql_showfuture_result = mysql_query($sql_showfuture);
+inc/showfuture.inc.php:39:if (mysql_num_rows($sql_showfuture_result))
+inc/showfuture.inc.php:42:  while ($val = mysql_fetch_array($sql_showfuture_result))
+inc/showresult.inc.php:22:$search_sql_categ_result = mysql_query($search_sql_categ);
+inc/showresult.inc.php:24:if ($search_sql_categ && mysql_num_rows($search_sql_categ_result))
+inc/showresult.inc.php:27:  while($val_categ = mysql_fetch_array($search_sql_categ_result))
+inc/showresult.inc.php:36:  $result = mysql_query($search_sql);
+inc/showresult.inc.php:41:	if (mysql_num_rows($result) > 0)
+inc/showresult.inc.php:44:		while ($val = mysql_fetch_array($result))
+inc/vitrine.inc.php:15:$res = mysql_query($sql);
+inc/vitrine.inc.php:18:while($val = mysql_fetch_array($res))

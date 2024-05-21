@@ -1,0 +1,75 @@
+#php_value error_reporting 2037
+RewriteEngine on
+
+
+RewriteCond %{HTTP_HOST} ^maisondudico.com$
+RewriteRule ^(.*)   http://www.dicoland.com/$1  [QSA,L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www.maisondudico.com$
+RewriteRule ^(.*)   http://www.dicoland.com/$1  [QSA,L,R=301]
+
+RewriteCond %{HTTP_HOST} ^dicoland.com$
+RewriteRule ^(.*)   http://www.dicoland.com/$1  [QSA,L,R=301]
+
+
+RewriteRule ^fr$ chglang.php?aplan=fr [L]
+RewriteRule ^en$ chglang.php?aplan=en [L]
+RewriteRule ^de$ chglang.php?aplan=de [L]
+RewriteRule ^it$ chglang.php?aplan=it [L]
+RewriteRule ^es$ chglang.php?aplan=es [L]
+
+#url de la forme
+#http://localhost/dicoland/fr/index.php
+#dicoland.com/index.php
+RewriteRule ^accueil$ index.php [L] 
+RewriteRule ^(fr|en|de|es|it)/$ /index.php?aplan=$1 [L]
+
+#url de la forme
+#http://localhost/dicoland/fr/index.php?page=contact
+#dicoland.com/index.php?page=contact
+RewriteRule ^contact$ index.php?page=contact [L] 
+RewriteRule ^(fr|en|de|es|it)/contact$ /index.php?aplan=$1&page=contact [L]
+
+#url de la forme
+#http://localhost/dicoland/fr/catalogue-dictionnaire-et-lexique-c0
+#dicoland.com/nom-de-la-categorie-c12-40
+RewriteRule ^(fr|en|de|es|it)/.*-c([0-9]+)(-([0-9]*))?$ /index.php?aplan=$1&page=catalogue&idcat=$2&pos=$4 [L]
+
+#url de la forme
+#http://localhost/dicoland/catalogue-dictionnaire-et-lexique-c0
+#dicoland.com/nom-de-la-categorie-c12-40
+RewriteRule ^.*-c([0-9]+)(-([0-9]*))?$ /index.php?page=catalogue&idcat=$1&pos=$3 [L]
+
+# DEBUT AJOUT FGI POUR GESTION URL CATALOGUE PAR EDITEUR
+#url de la forme
+#http://localhost/dicoland/fr/editeur-la-maison-du-dictionnaire-e12
+#dicoland.com/nom-editeur-e12
+RewriteRule ^(fr|en|de|es|it)/catalogue-editeur.*-e([0-9]+)?$ /index.php?aplan=$1&page=catediteur&idedit=$2 [L]
+
+#url de la forme
+#http://localhost/dicoland/editeur-la-maison-du-dictionnaire-e12
+#dicoland.com/nom-editeur-e12
+RewriteRule ^catalogue-editeur.*-e([0-9]+)?$ /index.php?page=catediteur&idedit=$1 [L]
+# FIN AJOUT FGI POUR GESTION URL CATALOGUE PAR EDITEUR
+
+#url de la forme
+#dicoland.com/catalogue-12-40-nom-de-la-categorie.html
+RewriteRule ^catalogue-([0-9]+)-([0-9]*-{1})?.*\.html$ /index.php?page=catalogue&idcat=$1&pos=$2 [L]
+
+#url de la forme
+#dicoland.com/article-1201-nom-du-produit.html
+RewriteRule ^article-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).*\.html$ /index.php?page=showproduct&id=$1&nbpage=$2&pagecourante=$3&nbresult=$4 [L]
+
+#url de la forme
+#dicoland.com/fr/categorie/nom-du-produit-1201
+RewriteRule ^(fr|en|de|es|it)/.*-([0-9]+)$ /index.php?aplan=$1&page=showproduct&id=$2 [L]
+
+#url de la forme
+#dicoland.com/categorie/nom-du-produit-1201
+RewriteRule ^.*-([0-9]+)$ /index.php?page=showproduct&id=$1 [L]
+
+#url de la forme
+#dicoland.com/fr/categorie/nom-du-produit-1201
+RewriteRule ^(fr|en|de|es|it)/(.*)$				/$2?aplan=$1 [QSA,L]
+
+ErrorDocument 404 /erreur404.php

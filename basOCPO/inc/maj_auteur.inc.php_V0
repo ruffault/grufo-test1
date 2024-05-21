@@ -1,0 +1,35 @@
+<?php
+include 'header.inc.php';
+include 'connexion.inc.php';
+//je vais boucler sur post qui a pour chaque indic a une array de valeur par auteur sous forme d'index
+//var_dump($_POST);
+$resul=array();
+foreach ($_POST as $champ => $tab) 
+	{
+	foreach ($tab as $i =>$val) 
+		{
+//			echo $i . "=>" .$champ . $val, '</br>';
+			$resul[$i][$champ] = $val; 
+		}
+	}	
+//création du tableau des auteurs à mettre à jour
+//sup=mod
+$maj = array();$sup=array();$ins= array();
+foreach($resul as  $at =>$val){
+//	echo $at . "=>" .$val['sup'], '</br>';
+	switch ($val['sup']) {
+	case "Mod":
+		new $auteur(
+		$maj[]= array_slice($val, 0,21);
+		break;
+	case "Sup":
+		$sup[]= $val['ID'];
+		break;
+	case "Ins":
+		$ins[]= $val;
+		break;
+	}
+}
+var_dump($maj);
+var_dump($sup);
+var_dump($ins);

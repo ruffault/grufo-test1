@@ -1,0 +1,62 @@
+;Files manager
+Gestione dei files
+
+;Manage and edit files.
+Gestisci e modifica files.
+
+;root
+root
+
+;name
+nome
+
+;size
+dimensione
+
+;date
+data
+
+;download
+download
+
+;This file is not readable.
+Questo file non è accessibile in scrittura.
+
+;Cannot create this directory.
+Impossibile creare questa directory.
+
+;Cannot write file.
+Impossibile scrivere il file.
+
+;Cannot delete.
+Impossibile cancellare.
+
+;This file is writable.
+Questo file è accessibile in scrittura.
+
+;This file is not writable.
+Questo file non è accessibile in scrittura.
+
+;New directory
+Nuova directory
+
+;Rename this %s
+Rinominare %s
+
+;New name
+Nuovo nome
+
+;Add a file
+Aggiungere un file
+
+;Choose a file
+Scegliere un file
+
+;Optionnal new name
+Nuovo nome opzionale
+
+;Cannot upload: destination file exists.
+Impossibile aggiornare: il file esiste già.
+
+;Cannot upload.
+Impossibile aggiornare.

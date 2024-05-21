@@ -1,0 +1,32 @@
+;MySQL database operations
+Opérations MySQL
+
+;Various database operations related to DotClear.
+Opérations diverses sur MySQL, en rapport avec DotClear.
+
+;Optimization
+Optimisation
+
+;This operation allows you to optimize DotClear-related tables in MySQL and keep some data safe. No data should be lost during this operation.
+Cette opération permet d'optimiser les tables MySQL en rapport avec DotClear et conserver l'intégrité des données. Aucune donnée ne peut être perdue au cours de cette opération.
+
+;Important
+Important
+
+;Such an operation could take some time. Please be patient.
+Une telle opération peut prendre un certain temps. Soyez patients.
+
+;Optimize database
+Optimiser la base
+
+;Optimize tables
+Optimisation des tables
+
+;Error during tables optimization
+Erreur au cours de l'optimisation des tables
+
+;Count comments
+Comptage des commentaires
+
+;Optimization done
+Optimisation terminée

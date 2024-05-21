@@ -1,0 +1,172 @@
+<?php
+/************************************************************************
+ * Programme écrit par GR le 4 novembre 2020				*
+ * pour									*
+ * 	- gérér les tables qui stockent le moteur de calcul 		*
+ * 	des frais de port						*
+ * 	- gérer les différents mode de calcul				*
+ * 									*
+ * 									*
+ ************************************************************************/
+header('content-type: text/html; charset=UTF-8');
+// on va commencer par charger les tables pour la France
+// donc selectionner les enregistrements de frais_port_new qui vérifient pays="fr"
+//on affiche le pays par son libellé long / on doit avoir une fonction pour ça oui c'est abrev_to_country_name($abrev, $applicationlang)
+	$sql= "select abrev, nom_fr  from pays order by nom_fr;";
+	$res = mysqli_query($link,$sql);
+//on initialise le pays en fonction des appels précédents avec par défaut FR
+	$pays =(isset($_GET['pays']) ? $_GET['pays'] : ((isset($_POST['pays']) ? $_POST['pays'] : 'FR'))); 
+?>
+<!--                       pavé entête de la page maitresse                                        --!>
+<h2> GESTION DES FRAIX DE PORT </h2>
+<h3> Le Principe est pour un pays de créer/modifier/supprimer des régles: <br>limite de poids/prix en fonction d'un mode de transport et d'un tarif applicable </h3>
+
+<!--                       fin du pavé entête de la page maitresse                                        --!>
+
+<!--                       pavé formulaire pays                                        --!>
+<form  id= "pays" method="post" action="index2.php?page=new_frais_port"> <!--debut du formulaire pour choisir le pays --!> 
+	<p>
+
+		<label for= "Pays">Renseignez le pays pour lequel vous voulez gérer les frais de port </label><br />
+		<select name="pays" id = "pays" required>
+<?php	while ($donnees=mysqli_fetch_array($res))//on propose à l'affichage tous les pays pour sélection
+	{	
+	?>
+			<option value ="<?php echo $donnees['abrev'];?>" <?php  echo (($donnees['abrev'] == $pays) ? "SELECTED" : ""); ?> >
+			<?php echo $donnees['abrev'] . "-" . $donnees['nom_fr'] ;?>
+			</option>
+	<?php } ?>
+
+		</select>
+	</p>
+	<input type="submit" value="Confirmer choix pays"> 
+</form> <!--fin du formulaire pour le pays --!>
+<?php
+//on initialise - en dur - les modes de calcul
+		$mode_calcul = array(array("nom" =>"standard","texte"=>"c'est le cas standard"),array("nom" =>"promo éditeur","texte" => "les tarifs applicables pour les paniers contenant des livres maisons"));
+// on boucle sur chaque mode de calcul
+// on  affiche le mode de calcul en entête
+		foreach ($mode_calcul as $mod_calc => $lib_mod_calc)
+		{
+?>
+	<h3> Pour la règle de calcul: <?php echo $lib_mod_calc["nom"]; ?><br> <?php echo $lib_mod_calc["texte"];?></h3>
+<?php 
+// on va afficher pour chacun des mode_calcul l'ensemble des couples poids_tarif/prix stockés dans la base pour le pays,mode_calcul
+$sql = "SELECT * from frais_port_new WHERE pays = '" . $pays . "' AND mode_calcul=" . $mod_calc . " ORDER BY pays,mode_calcul,mode,poids_tarif;";
+$res = mysqli_query($link,$sql);
+//on initialise la variable  $mode et un id lui correspondant
+		$prec_mode = ""; $prec_id = 0;
+//on boucle sur les enregistrements sélectionnés
+while ($regle = mysqli_fetch_array($res)) {
+	?>
+		
+	<?php
+	// on imprime le premier enregistrement du mode de frais de port si c'est le premier ou s'il a changé. On l'aura initialiésé à null	
+	if ($regle['mode'] != $prec_mode){
+		if($prec_mode !="") { //on ajoute le bouton pour ajouter un couple
+	?>
+			<br><a href ='index2.php?page=new_frais_port&sous_page=modif&type=add&pays=<?php echo $pays; ?>&id=<?php echo $prec_id; ?>'>
+			Ajouter couple limite/prix ? <img src="./css/picto_dupliquer.gif" alt="cliquer pour ajouter un couple" title="cliquer pour ajouter un couple""></a>;`
+		<?php } ?>
+			<br><br><p id='FP_mode'> <strong><?php echo $regle['mode'];?> </strong></p>
+	<?php }?>
+	
+		<!--on écrit maintenant pour chaque poids son prix plus les icones de modification--!>
+		<span id='FP_poids'> >  <?php echo $regle['poids_tarif'];?> </span>
+		<span id='FP_prix'>Prix: <?php echo $regle['prix'] ; ?> </span>
+		<a href ='index2.php?page=new_frais_port&pays=<?php echo $pays; ?>&sous_page=modif&mode_calcul=<?php echo $mod_calc; ?>&id=<?php echo $regle['id_frais_port']; ?>'><img src="./css/picto_edit.gif" alt="Modifier ces valeurs" title="Modifier ces valeurs"></a>
+		<a href ='index2.php?page=new_frais_port&sous_page=sup&pays=<?php echo $pays; ?>&id=<?php echo $regle['id_frais_port']; ?>'><img src="./css/picto_poubelle.gif" alt="Supprimer ces valeurs" title="Supprimer ces valeurs"></a>
+	
+<?php
+	$prec_mode = $regle['mode']; $prec_id = $regle['id_frais_port'];
+
+	} //fin de la boucle sur l'enregistrement*/	
+//on ajoute le bouton pour ajouter un couple pour le dernier mode du mode de calcul
+	?>
+			<br><a href ='index2.php?page=new_frais_port&sous_page=modif&type=add&pays=<?php echo $pays; ?>&id=<?php echo $prec_id; ?>'>
+			Ajouter couple limite/prix ? <img src="./css/picto_dupliquer.gif" alt="cliquer pour ajouter un couple" title="cliquer pour ajouter un couple""></a>;`
+	<?php 
+} //fin de la boucle sur le mode de calcul*/	
+//on traite la modification
+switch((isset($_GET['sous_page']) ? $_GET['sous_page'] : '') ){
+	case "sup"://il s'agit de supprimer l'enregistrement souhaité
+//je demande la confirmation
+?>
+		<form action="include/sup_regle_frais_port.inc.php" method="post">
+			<input type="hidden" name="id" value=<?php echo $_GET['id']; ?>>
+			<input type="hidden" name="pays" value=<?php echo $pays; ?>>
+			<input type="submit" name="Valider" value="Confirmez vous la suppression de cette règle?"
+		</form>
+<?php
+	break;// fin du cas sup
+
+	case "modif": //on crée le cadre pour accueillir les modifications
+
+//je récupére les données du frais de port à modifier
+	$sql= 'SELECT * from frais_port_new WHERE id_frais_port =' . $_GET['id'] .';';
+	$res = mysqli_query($link,$sql);
+	$row = mysqli_fetch_array($res);
+	var_dump("je suis la et la var vaut:"); var_dump($row);
+echo "<h3>Pays: " . $row['pays'] . "  mode: " . $row['mode'] . "</h3>";
+?>
+	<table width="500" border="0" cellspacing="1" cellpadding="0">
+		<form id="FP_modif" action="include/edit_regle_frais_port.inc.php" method="post"> 
+		<tr>
+			<td align"center"><strong>Limite poids</strong></td>
+			<td align="center"><strong>Tarif</strong></td>
+		
+		</tr> 
+
+<?php		if ((isset($_GET['type']) ? $_GET['type'] : '') == "add") {// on affiche les zones pour ajouter un couple
+?>	
+		<tr>	
+			<td align="center">
+			<input type="text" name="poids_tarif[]" id="poids" value="" autofocus>
+			</td>
+			<td align="center">
+			<input type="text" name="prix[]" id="prix" value="" >
+			</td>
+		</tr>
+		<input type="hidden" name="id[]" value=""> 
+<?php }// fin du cas particulier pour l'ajout d'un couple
+
+	//il s'agit de modifier les enregistrements existants en mettant le curseur sur l'id d'appel
+	//je récupère tous les enregistrements du mode donc 
+		$sql= "select * from frais_port_new where pays='" . $pays. "' and mode_calcul=" . $row['mode_calcul'] . " and mode='" .$row['mode'] . "' ORDER BY pays,mode_calcul,mode,poids_tarif;";
+		$restot = mysqli_query($link,$sql);
+ 
+
+//je boucle sur les enregistrements
+
+		while($rowtot = mysqli_fetch_array($restot)){
+?>
+		<tr>	
+			<td align="center">
+			<input type="text" name="poids_tarif[]" id="poids" value=<?php echo $rowtot['poids_tarif'];?>>
+			</td>
+			<td align="center">
+			<input type="text" name="prix[]" id="prix" value=<?php echo $rowtot['prix'];?> <?php echo ($rowtot['id_frais_port'] == $_GET['id'] ? "autofocus" : "");?>>
+			</td>
+		</tr>
+			<input type="hidden" name="id[]" value=<?php echo $rowtot['id_frais_port']; ?>>
+	
+	
+<?php  } //fin de la boucle sur les enregistrements
+?>
+		<input type="hidden" name="pays" value="<?php echo $pays; ?>">
+		<input type="hidden" name="mode_calcul" value="<?php echo $row['mode_calcul']; ?>">
+		<input type="hidden" name="mode" value="<?php echo $row['mode']; ?>">
+		<tr>
+			<td colspan="4" align="center"> 
+			<input type="submit" name="Valider" value="Valider">
+			</td> 
+		</tr>
+	</form>
+</table>
+<?php	break; //fin du case modif
+
+} // fin du switch
+?>
+		
+
+

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>pour testet mysqli et la gestion des charset</title>
+         <meta charset="utf-8" />
+    </head>
+    <body>
+         <h2>Page de test</h2>
+        
+          <p>
+             Cette page contient du code HTML avec des balises PHP.<br />
+            <?php
+	      $host="localhost";
+	      $user="c1_dico"; 
+	      $pass="150576dico";
+	      $bdd="c1_dicodb" ;
+	   $link = mysqli_connect($host,$user,$pass,$bdd) or die("connexion ratee");
+
+	       $sql= "SELECT * FROM produit WHERE id_produit = " . $_GET['prod'] .";";
+	       $resul = mysqli_query($link,$sql);
+	       $var = mysqli_fetch_assoc($resul);
+	       echo $var['realname'];
+
+
+	  
+	   ?>
+											                Voici quelques petits tests :
+        </p>
+														        
+        <ul>
+        <li style="color: blue;">Texte en bleu</li>
+        <li style="color: red;">Texte en rouge</li>
+        <li style="color: green;">Texte en vert</li>
+        </ul>
+																        
+											        <?php
+      /* Encore du PHP
+       Toujours du PHP */
+      ?>
+   </body>
+</html>

@@ -1,0 +1,42 @@
+<?php
+$sql_allcateg = "SELECT id_categorie,
+									id_categorie_parent,
+									nom_$applicationlang as nom
+								FROM categorie ORDER BY nom;";
+$res = mysql_query($sql_allcateg);
+
+while($val = mysql_fetch_array($res)) {
+	$tab[$val['id_categorie']] = array(
+	                  'id' => $val['id_categorie'],
+                    'parent' => $val['id_categorie_parent'],
+                    'nom' => $val["nom"]
+                                    );
+}
+
+if ($_GET['idcat']) {
+  $var = sub_level($tab,$_GET['idcat']);
+  $smarty->assign("uppercat", up_level($tab,$_GET['idcat']));
+  $smarty->assign("categorie_total", count($var));
+  $smarty->assign("categorie_precise", $var);
+
+  require("inc/samecateg.inc.php");
+}
+else {
+  //on purge le tableau des categories des indices different de 0
+  $i = 0;
+  while (list ($key, $value) = each ($tab)) {
+    if ($value["parent"] == 0) {
+      $categorie[$i] = array(
+                              'id' => $value['id'],
+                              'nom' => $value['nom']
+                              );
+      $i++;
+    }
+  }
+  $smarty->assign("subcateg", $tab);
+  $smarty->assign("categorie", $categorie);
+}
+
+debug(up_level($tab,184));
+debug(sub_level($tab,285));
+?>

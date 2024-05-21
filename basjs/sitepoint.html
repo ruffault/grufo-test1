@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>mn bac a sable sitepoint</title>
+		<meta name="description" content="The HTML5 Herald">
+		<meta name="author" content="gerard">
+		<link rel="stylesheet" href="css/styles.css">
+		<!--[if lt IE 9]>
+			<script src="js/html5shim.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<header>
+			<h1>HTML5 Herald
+				<span class="tagline">Produced With That Good Ol’ Timey HTML5 
+					↵& CSS3</span>
+			</h1>
+			<nav>
+				<details>
+					<summary>Some Magazines of Note</summary>
+					<ul>
+						<li><cite>Bird Watcher's Digest</cite></li>
+						<li><cite>Rower's Weekly</cite></li>
+						<li><cite>Fishing Monthly</cite></li>
+					</ul>
+				</details>
+			</nav>
+		</header>
+		<main role="main">
+		<div class="primary">
+			<article>
+				<h1>Accessible Web Apps</h1>
+				<p>Lorem ipsum dolor … </p>
+				<p>As you can see in <a href="#fig1">Figure 1</a>,
+				<figure id="fig1">
+					<figcaption>Screen Reader Support for WAI-ARIA</figcaption>
+					<img src="figure1.png" alt="JAWS: Landmarks 1/1, Forms 4/5 … ">
+				</figure>
+				<p>Lorem ipsum dolor … </p>
+			</article>
+		</div>
+		<div class="secondary">
+			<article>
+				<p>In the words of <cite>Charles Bukowski</cite> -  
+				<q>An intellectual says a simple thing in a hard way. An artist says 
+					↵a hard thing in a simple way.</q></p>
+			</article>
+			<form id="register" method="post">
+				<header>
+					<h1>Sign Me Up!</h1>
+					<p>I would like to receive your fine publication.</p>
+				</header>
+				<ul>
+					<li>
+						<label for="register-name">My name is:</label>
+						<input type="text" id="register-name" name="name" required aria-required="true">
+					</li>
+					<li>
+						<label for="tels">Mes numéros de téléphone  sont:</label>
+						<input type="tel" id="tels" name="tels" multiple  required aria-required="true">
+					</li>
+					<li>
+						<label for="address">Mes adresses mail sont:</label>
+						<input type="email" id="address" name="address" multiple  required aria-required="true">
+					</li>
+					<li>
+						<label for="url">My website is located at:</label>
+						<input type="url" id="url" name="url" placeholder="dicotest.grufo.ovh">
+					</li>
+					<li> 
+						<label for="password">je rentre mon mot de passe</label>
+						<p>(au moins 6 caracteres, sans espace)</p>
+						<input type="password" id="password" name="password" required title="au moins 6 caractères, sans espace" pattern="\S{6,}">
+
+					</li>
+					<li>
+						<label for="rating">On a scale of 1 to 10, my knowledge of 
+							↵HTML5 is:</label>
+						<input type="text" name="rating" id="rating">
+					</li>
+					<li>
+						<label for="startdate">Please start my subscription on:
+							↵</label>
+						<input type="date" min="<?php echo(daysFromNow(1)); ?>" 
+			 ↵max="<?php echo(daysFromNow(91)); ?>" id="startdate" name="startdate" required aria-required="true" placeholder="<?php echo(daysFromNow(1)); ?>">
+					</li>
+					<li>
+						<label for="quantity">I would like to receive <input 
+	     type="number" min="1" name="quantity" id="quantity"> copies of <cite>
+		     ↵The HTML5 Herald</cite>.</label>
+					</li>
+					<li>
+						<label for="rating">On a scale of 1 to 10, my knowledge of HTML5 is:</label>
+						<input name="rating" type="range" min="1" max="10" step="1">
+					</li>
+					<li>
+						<label for="upsell">Also sign me up for <cite>The CSS3 
+								↵Chronicle</cite></label>
+						<input type="checkbox" id="upsell" name="upsell" value="CSS 
+						↵Chronicle">
+					</li>
+					<li>
+						<label for="about">Titre de l'article</label>
+						<input type="text" name="about" id="about" readonly value="http://www.thehtml5herald.com/register.html">
+
+					</li>
+					<li>
+						<label for="favcolor">Favorite Color</label>
+						<input type="color" list="colors" id="favcolor" name="favcolor">
+						<datalist id="colors">
+							<option value="#0000FF" label="blue">
+							<option value="#008000" label="green">
+							<option value="#ff0000" label="red">
+							<option value="#663399" label="RebeccaPurple">
+						</datalist>
+					</li>				<li>
+						<input type="submit" id="register-submit" value="Send Post 
+						↵Haste">
+					</li>
+				</ul>
+			</form>
+		</div>
+		<div class="tertiary">
+			<aside>
+				<article>
+					<dl>
+						<dt>Selector:</dt>
+						<dd>The element(s) targeted.</dd>
+						<dt>Property:</dt>
+						<dd>The feature used to add styling to the targeted element, 
+						↵defined before a colon.</dd>
+						<dt>Value:</dt>
+						<dd>The value given to the specified property, declared after the 
+						↵colon.</dd>
+					</dl>
+				</article>
+			</aside>
+			<article>
+			</article>
+		</div>
+		</main><!-- main -->
+		<footer>
+			<section id="authors">
+				<section></section>
+			</section>
+			<section id="copyright">
+				<small>© SitePoint Pty. Ltd.</small>
+			</section>
+
+		</footer>
+		<script src="js/scripts.js"></script>
+	</body>
+
+</html>

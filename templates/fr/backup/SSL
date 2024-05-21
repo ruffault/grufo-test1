@@ -1,0 +1,48 @@
+abby.tpl:20:		    <p>ABBYY Lingvo Dictionaries pour iOS est une application pour Apple® mobile devices. Grâce à une technologie très puissante de traduction à partir d’une photo : la méthode la plus simple pour traduire avec un Iphone.<br> Pour en savoir plus sur ce produit, rendez-vous sur : <a href="http://www.abbyy.com/lingvomobile_ios/key_features/">www.abbyy.com</a></p>
+carrousel.tpl:129:				<a href="http://www.expolangues.fr/conferencesEL/vendredi.html">
+carrousel.tpl:131:				<h3><a href="http://www.expolangues.fr/conferencesEL/vendredi.html">Une innovation dans l’apprentissage des langues : l’intercompréhension.<br>Présentation de la méthode « EuRom5 ».</a></h3>
+carrousel.tpl:134:				<br><a href="http://www.expolangues.fr/infosEL.html">Infos pratiques</a>
+colmenuV2.tpl:49:<svg version="1.1" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="#666">
+contact.tpl:9:<div id="adresse" itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress"> 
+header_fgi.tpl:3: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+header_fgi.tpl:5:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+header_fgi.tpl:93:        <!-- <li{if $smarty.get.page == "blog"} id="current"{/if}><a href="http://www.dicoland.com/blog/">Blog</a></li> -->
+header_fgi.tpl:114:												  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+headernew.tpl:3:<!-- <DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"> -->
+headernew.tpl:32:	<meta property="og:url" content="http://www.dicoland.com/"/>
+headernew.tpl:78:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+headernew.tpl:123:	Pour atteindre le site Dicoland cliquer sur le lien ci-après <a href="http://www.dicoland.com">DICOLAND</a>
+headernew.tpl:143:        <!-- <li{if $smarty.get.page == "blog"} id="current"{/if}><a href="http://www.dicoland.com/blog/">Blog</a></li> -->
+header-sav-old.tpl:2:<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+header-sav-old.tpl:3:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+header-sav-old.tpl:61:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+header-sav-old.tpl:116:        <!-- <li{if $smarty.get.page == "blog"} id="current"{/if}><a href="http://www.dicoland.com/blog/">Blog</a></li> -->
+header_sav.tpl:3: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+header_sav.tpl:5:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+header_sav.tpl:47:<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+header_sav.tpl:63:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+header_sav.tpl:119:        <!-- <li{if $smarty.get.page == "blog"} id="current"{/if}><a href="http://www.dicoland.com/blog/">Blog</a></li> -->
+header.tpl:2:<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+header.tpl:4:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+header.tpl:31:	<meta property="og:url" content="http://www.dicoland.com/"/>
+header.tpl:77:    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+header.tpl:122:	Pour atteindre le site Dicoland cliquer sur le lien ci-après <a href="http://www.dicoland.com">DICOLAND</a>
+header.tpl:139:        <!-- <li{if $smarty.get.page == "blog"} id="current"{/if}><a href="http://www.dicoland.com/blog/">Blog</a></li> -->
+index_fgi.tpl:33:				  src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+index.tpl:9:    <a href="mailto:?Subject=Dicoland.com&amp;Body=La%20maison%20du%20dictionnaire%20et%20MediQualis%20!%20 http://www.dicoland.com" style="text-decoration:none">
+index.tpl:14:    <a href="http://www.facebook.com/sharer.php?u={$urisite}" target="_blank" style="text-decoration:none">
+index.tpl:19:    <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={$urisite}" target="_blank" style="text-decoration:none">
+monthproduct.tpl:21:	<p> <h4><center><a href="http://dicotest.grufo.ovh/fr/clave-diccionario-de-uso-del-espanol-actual-2012-acces-online-301"><img src="https://images.epagine.fr/380/9788467541380_1_75.jpg" width="100px"></center></h4></a> 
+offre.tpl:3: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+offre.tpl:5:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+paraitre.tpl:50:		<script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.js"></script>
+paraitre.tpl:96:				<img class="cover" src="http://localhost:8888/web/css/annonce.jpg"/>
+paraitre.tpl:99:				<p><a href="http://www.nonsensesociety.com/2009/03/photography-by-martin-stranka/" target="_BLANK">En savoir plus</a></p>
+partenaires.tpl:9:		<h4><a href="http://www.lci-europe.com">LCI - Traduction, localisation et communication technique</a><br /></h4>
+partenaires.tpl:15:			<a href="http://offre-traduction.svp.com/traduction-dicoland" onclick="window.open(this.href); return false;" ><img src="./img/offre_siteweb_svp.jpg" alt="svp traduction"/></a>
+partenaires.tpl:23:			<h4><a href="http://www.goenglish.fr" target="_blank">www.goenglish.fr</a><br /></h4>
+partenaires.tpl:28:		<h4><a href="http://www.planete-enseignant.com" target="_blank">www.planete-enseignant.com</a><br /></h4>
+recommend.tpl:3: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+recommend.tpl:4:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
+zoom.tpl:3: "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+zoom.tpl:5:<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">

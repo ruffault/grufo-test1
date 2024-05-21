@@ -1,0 +1,43 @@
+php_value error_reporting 2037
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^maisondudico.com$
+RewriteRule ^(.*)   http://www.dicoland.com/$1  [QSA,L,R=301]
+
+RewriteCond %{HTTP_HOST} ^www.maisondudico.com$
+RewriteRule ^(.*)   http://www.dicoland.com/$1  [QSA,L,R=301]
+
+RewriteCond %{HTTP_HOST} ^dicoland.com$
+RewriteRule ^(.*)   http://www.dicoland.com/$1  [QSA,L,R=301]
+
+#url de la forme
+#http://localhost/dicoland/fr/catalogue-dictionnaire-et-lexique-c0
+#dicoland.com/nom-de-la-categorie-c12-40
+RewriteRule ^(fr|en|de|es|it)/.*-c([0-9]+)(-([0-9]*))?$ /~dicoland/index.php?aplan=$1&page=catalogue&idcat=$2&pos=$4 [L]
+
+#url de la forme
+#http://localhost/dicoland/catalogue-dictionnaire-et-lexique-c0
+#dicoland.com/nom-de-la-categorie-c12-40
+RewriteRule ^.*-c([0-9]+)(-([0-9]*))?$ /~dicoland/index.php?page=catalogue&idcat=$1&pos=$3 [L]
+
+#url de la forme
+#dicoland.com/catalogue-12-40-nom-de-la-categorie.html
+RewriteRule ^catalogue-([0-9]+)-([0-9]*-{1})?.*\.html$ /~dicoland/index.php?page=catalogue&idcat=$1&pos=$2 [L]
+
+#url de la forme
+#dicoland.com/article-1201-nom-du-produit.html
+RewriteRule ^article-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+).*\.html$ /~dicoland/index.php?page=showproduct&id=$1&nbpage=$2&pagecourante=$3&nbresult=$4 [L]
+
+#url de la forme
+#dicoland.com/fr/categorie/nom-du-produit-1201
+RewriteRule ^(fr|en|de|es|it)/.*-([0-9]+)$ /~dicoland/index.php?aplan=$1&page=showproduct&id=$2 [L]
+
+#url de la forme
+#dicoland.com/categorie/nom-du-produit-1201
+RewriteRule ^.*-([0-9]+)$ /~dicoland/index.php?page=showproduct&id=$1 [L]
+
+#url de la forme
+#dicoland.com/fr/categorie/nom-du-produit-1201
+RewriteRule ^(fr|en|de|es|it)/(.*)$				/~dicoland/$2?aplan=$1 [QSA,L]
+
+ErrorDocument 404 /~dicoland/erreur404.php

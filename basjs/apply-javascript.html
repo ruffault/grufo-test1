@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+	  <head>
+		      <meta charset="utf-8">
+		          <title>Apply JavaScript example</title>
+			  <script>
+// javascript goes here
+document.addEventListener("DOMContentLoaded", function() {
+	function createParagraph() {
+		let para = document.createElement('p');
+		para.textContent = 'Vous avez appuyé sur le bouton!';
+		document.body.appendChild(para);
+	}
+
+	const buttons = document.querySelectorAll('button');
+
+	for (let i = 0; i < buttons.length ; i++) {
+		buttons[i].addEventListener(
+				'click', createParagraph);
+	}
+});
+			  </script>
+	  </head>
+			      <body>
+				          <button>Appuyez SVP</button>
+	
+					  <button> un autre bouton </button>
+  			      </body>
+</html>
